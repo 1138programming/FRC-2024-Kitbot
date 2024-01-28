@@ -7,7 +7,7 @@ package frc.robot.subsystems;
 import static frc.robot.Constants.DrivetrainConstants.*;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+// import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -31,18 +31,18 @@ public class PWMDrivetrain extends SubsystemBase {
     /*Create MotorControllerGroups for each side of the drivetrain. These are declared here, and not at the class level
      * as we will not need to reference them directly anymore after we put them into a DifferentialDrive.
      */
-    MotorControllerGroup leftMotors =
-        new MotorControllerGroup(new PWMSparkMax(kLeftFrontID), new PWMSparkMax(kLeftRearID));
-    MotorControllerGroup rightMotors =
-        new MotorControllerGroup(new PWMSparkMax(kRightFrontID), new PWMSparkMax(kRightRearID));
+    // MotorControllerGroup leftMotors =
+    //     new MotorControllerGroup(new PWMSparkMax(kLeftFrontID), new PWMSparkMax(kLeftRearID));
+    // MotorControllerGroup rightMotors =
+    //     new MotorControllerGroup(new PWMSparkMax(kRightFrontID), new PWMSparkMax(kRightRearID));
 
-    // Invert left side motors so both sides drive forward with positive output values
-    leftMotors.setInverted(true);
-    rightMotors.setInverted(false);
+    // // Invert left side motors so both sides drive forward with positive output values
+    // leftMotors.setInverted(true);
+    // rightMotors.setInverted(false);
 
     // Put our controller groups into a DifferentialDrive object. This object represents all 4 motor
     // controllers in the drivetrain
-    m_drivetrain = new DifferentialDrive(leftMotors, rightMotors);
+    // m_drivetrain = new DifferentialDrive(leftMotors, rightMotors);
   }
 
   /*Method to control the drivetrain using arcade drive. Arcade drive takes a speed in the X (forward/back) direction

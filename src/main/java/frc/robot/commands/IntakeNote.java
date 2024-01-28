@@ -4,8 +4,8 @@
 
 package frc.robot.commands;
 
-import static frc.robot.Constants.LauncherConstants.kIntakeFeederSpeed;
-import static frc.robot.Constants.LauncherConstants.kIntakeLauncherSpeed;
+// import static frc.robot.Constants.LauncherConstants.kIntakeFeederSpeed;
+// import static frc.robot.Constants.LauncherConstants.kIntakeLauncherSpeed;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.CANLauncher;
@@ -14,7 +14,7 @@ public class IntakeNote extends Command {
   CANLauncher m_launcher;
   /** Creates a new IntakeNote. */
   public IntakeNote(CANLauncher launcher) {
-    this.m_launcher = launcher;
+    m_launcher = launcher;
 
     // indicate that this command requires the launcher system
     addRequirements(m_launcher);
@@ -24,8 +24,8 @@ public class IntakeNote extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_launcher.setLaunchWheel(-kIntakeFeederSpeed);
-    m_launcher.setFeedWheel(-kIntakeLauncherSpeed);
+    m_launcher.setLaunchWheel(-0.6);
+    m_launcher.setFeedWheel(-0.6);
   }
 
   // Called every time the scheduler runs while the command is scheduled.

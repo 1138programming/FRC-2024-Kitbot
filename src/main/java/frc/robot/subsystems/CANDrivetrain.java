@@ -40,11 +40,6 @@ public class CANDrivetrain extends SubsystemBase {
 
     /*Sets current limits for the drivetrain motors. This helps reduce the likelihood of wheel spin, reduces motor heating
      *at stall (Drivetrain pushing against something) and helps maintain battery voltage under heavy demand */
-    // leftFront.set .setSmartCurrentLimit(kCurrentLimit);
-    // leftRear.setSmartCurrentLimit(kCurrentLimit);
-    // rightFront.setSmartCurrentLimit(kCurrentLimit);
-    // rightRear.setSmartCurrentLimit(kCurrentLimit);
-
     // Set the rear motors to follow the front motors.
     
     leftRear.follow(leftFront);
