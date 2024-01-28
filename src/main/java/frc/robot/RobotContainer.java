@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.LauncherConstants;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
+import frc.robot.commands.IntakeNote;
 import frc.robot.commands.LaunchNote;
 import frc.robot.commands.PrepareLaunch;
 import frc.robot.subsystems.CANDrivetrain;
@@ -62,6 +63,8 @@ public class RobotContainer {
                 .withTimeout(LauncherConstants.kLauncherDelay)
                 .andThen(new LaunchNote(m_launcher))
                 .handleInterrupt(() -> m_launcher.stop()));
+
+    m_operatorController.x().whileTrue(new IntakeNote(m_launcher));
 
     // Set up a binding to run the intake command while the operator is pressing and holding the
     // left Bumper
